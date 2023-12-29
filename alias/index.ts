@@ -60,3 +60,33 @@ const vegetables = {
 
 const shoppingColors = {}
 
+interface _Person {
+    name: string
+    age: number
+    address: string
+}
+
+type PersonWithoutAddress = Omit<_Person, "address">
+
+type PartialPerson = Partial<_Person>
+
+type RequiredPerson = Required<_Person> 
+
+type HttpMode = "GET" | "PUT" | "POST" | "DELETE"
+
+type SupportedHttpMode = Exclude<HttpMode, "PUT" | "DELETE">
+
+type StringStringDictionary = {
+    [key: string]: string
+}
+
+const favoriteThings: StringStringDictionary = {}
+
+const something = {
+    firstName: "huan",
+    lastName: "nguyen"
+}
+
+type OurType<T extends object> = {
+    [Key in keyof T]: string
+}
